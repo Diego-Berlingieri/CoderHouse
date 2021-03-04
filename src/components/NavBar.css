@@ -1,0 +1,53 @@
+.NavBar {
+    background-color:rgb(60,60,60);
+    min-height: 50;
+    align-items: center;
+    color: white;
+    padding: 10px;
+    max-width: 1024px;
+    margin: 0px auto;
+    align-items: center;
+}
+
+.container {
+    max-width: 1024px;
+    padding-right: 25px;
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+}
+
+.logobox {
+    max-width: 500px;
+    display: inline-flex;
+    align-items: center;
+}
+
+.logo {
+    height: 80px;
+}
+
+.categories {
+    max-width: 1024px;
+    display: flex;
+    justify-content: space-between;
+    padding-right: 25px;
+    padding-bottom: 5px;
+}
+
+.cat-link {
+    border: 1px solid white;
+    border-radius: 3px;
+    text-align: center;
+    padding: 10px 25px;
+    display: inline-flex;
+    position: relative;
+    margin-left: 25px;
+    text-decoration: none;
+    color: white;
+}
+
+.cat-link:hover{
+    background-color:rgb(90,90,90);
+    color: white;
+}
