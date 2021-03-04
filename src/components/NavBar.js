@@ -1,3 +1,4 @@
+import CartWidget from './CartWidget';
 import logo from '../images/logo.svg';
 import './NavBar.css';
 
@@ -10,6 +11,7 @@ function NavBar() {
           <img src={logo} className="logo" alt="logo" />
           <h1>MELLOW</h1>
         </div>
+        <CartWidget />
       </div>
 
       <div className="categories">
