@@ -1,23 +1,17 @@
 import React, { Component } from 'react';
 import mycart from '../images/cart-solid.svg';
 
+// style sin usar un css externo (dentro del .js)
 const cartStyle = {
-  alignitems: 'center',
-  display: 'inline-flex',
+  color: 'white',
+  textdecoration: 'none',
+  cursor:'pointer',
 };
 
-const icoStyle = {
-  height: 40,
-  width: 40,
-};
-
-// Se puede agregar un contador de items y/o un subtotal $
-export default class CartWidget extends Component {
-  render() {
+// Se puede agregar estado del cart. "empty cart", contador de items y/o un subtotal $
+function CartWidget() {
     return (
-      <div style={cartStyle}>
-          <img style={icoStyle} src={mycart} className="cart" alt="shopping cart" />
-      </div>
+      <i className="fas fa-shopping-cart" style={cartStyle}></i>
     );
   }
-}
+export default CartWidget;
