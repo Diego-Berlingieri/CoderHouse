@@ -1,6 +1,3 @@
-import React, { Component } from 'react';
-import mycart from '../images/cart-solid.svg';
-
 // style sin usar un css externo (dentro del .js)
 const cartStyle = {
   color: 'white',

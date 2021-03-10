@@ -19,7 +19,7 @@ El Menu debe tener:
 - Un listado de categorías clickeables (p)
 - Incorpora alguna librería de estilos con bootstrap/materialize u otro de tu preferencia (opcional).
 
-Estado: Entregado
+Estado: Entregado y aprobado.
 
 ------------------------------------------------------------------------------------------------------------------
 
@@ -40,3 +40,16 @@ Estado:
 
 ------------------------------------------------------------------------------------------------------------------
 
+Entregable 4 - Contador con boton
+08/mar/2021
+due:
+- Crea un componente ItemCount.js que debe estar compuesto por un boton y controles para incrementar y decrementar
+la cantidad requerida de items.
+- El numero del contador nunca puede superar el stock disponible
+- De no haber stock el clic no debe tener efecto y por ende no ejecutar el callback onAdd
+- Si hay stock al clickear el boton, se debe ejecutar onAdd con un numero que debe ser la cantidad 
+seleccionada por el usuario
+
+function ItemCount({stock, initial, onAdd}){
+  desarrollar logica
+}

@@ -5,12 +5,10 @@ import React, { Component } from 'react';
 import * as RBS from 'react-bootstrap';
 
 
-// TO-DO asignar la propiedad TOP a la NavBar. Modificar el margen superior para que el contenido no quede oculto.
-
 class NavBar extends Component {
   render() {
     return (
-        <RBS.Navbar bg="dark" expand="sm" variant="dark">
+        <RBS.Navbar bg="dark" expand="sm" variant="dark" fixed="top">
           <RBS.Navbar.Brand href="#home">
             <img src={logo} width="30" height="30" className="d-inline-block align-top" alt="React Bootstrap logo"/>
             MELLO
