@@ -1,8 +1,8 @@
-import CartWidget from './CartWidget';
-import logo from '../images/mello-logo.svg';
-import './NavBar.css';
-import React, { Component } from 'react';
 import * as RBS from 'react-bootstrap';
+import './NavBar.css';
+import logo from '../images/mello-logo.svg';
+import CartWidget from './CartWidget';
+import React, { Component } from 'react';
 
 
 class NavBar extends Component {

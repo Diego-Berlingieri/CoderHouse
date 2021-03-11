@@ -26,6 +26,7 @@ Estado: Entregado y aprobado.
 Entregable 3 - Crea tu landing
 03/Mar/2021
 due: 10/Mar/2021
+
 - crea un componente CartWidget.js que haga rendering de un ícono Cart, e inclúyelo dentro de NavBar.js 
   para que esté visible en todo momento. Agrega algunos estilos con bootstrap/materialize u otro.
 - crea un componente ItemListContainer con una prop greeting, y muestra el mensaje dentro 
@@ -43,6 +44,7 @@ Estado:
 Entregable 4 - Contador con boton
 08/mar/2021
 due:
+
 - Crea un componente ItemCount.js que debe estar compuesto por un boton y controles para incrementar y decrementar
 la cantidad requerida de items.
 - El numero del contador nunca puede superar el stock disponible
@@ -53,3 +55,32 @@ seleccionada por el usuario
 function ItemCount({stock, initial, onAdd}){
   desarrollar logica
 }
+
+------------------------------------------------------------------------------------------------------------------
+
+Entregable 5 - Catalogo con map y promises
+11/mar/2021
+due: 22/mar/2021
+
+- Crea los siguientes componentes para mostrar algunos productos en tu ItemListContainer.js:
+
+  - Item.js: Es un componente destinado a mostrar información breve del producto que el user clickeará luego para acceder 
+    a los detalles (los desarrollaremos más adelante)
+    Ejemplo:
+    function Item({ item }) {
+      // Desarrolla la vista de un ítem donde item es de tipo
+      // { id, title, price, pictureUrl }
+    }
+
+  - ItemList.js Es un agrupador de un set de componentes Item.js (Deberías incluirlo dentro de ItemListContainer del 
+    desafío 3).
+    Ejemplo: 
+    function ItemList({ items }) {
+      // Desarrolla la vista utilizando un array de items y un map
+    }
+
+- Implementa un async mock (promise): Usa un efecto de montaje para poder emitir un llamado asincrónico a un mock 
+estático de datos que devuelva un conjunto de item { id, title, description, price, pictureUrl } en tiempo diferido 
+(setTimeout) de 2 segundos para emular retrasos de red.
+
+------------------------------------------------------------------------------------------------------------------

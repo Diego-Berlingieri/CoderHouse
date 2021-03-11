@@ -1,51 +1,64 @@
 import NavBar from './components/NavBar';
 import ItemListContainer from './components/ItemListContainer';
-import * as RBS from 'react-bootstrap';
+import {useEffect, useState} from 'react';
 
-const Items = [
-  { title: 'Zapatillas',
-    desc: 'Zapatillas de cuero talle 43',
+// Database
+const myItemsDB = [
+  { id: 1,
+    title: 'Zapatillas',
+    description: 'Zapatillas de cuero talle 43',
+    price: 4000,
     stock: 10,
-    imgSrc: '/images/products/4.webp',
+    pictureUrl: '/images/products/4.webp',
   },
-  { title: 'Campera',
-    desc: 'Campera Hombre talle M',
+  { id: 2,
+    title: 'Campera',
+    description: 'Campera Hombre talle M',
+    price: 7000,
     stock: 5,
-    imgSrc: '/images/products/5.webp',
+    pictureUrl: '/images/products/5.webp',
   },
-  { title: 'Jean',
-    desc: 'Jean Regular talle 32',
+  { id: 3,
+    title: 'Jean',
+    description: 'Jean Regular talle 32',
+    price: 2500,
     stock: 7,
-    imgSrc: '/images/products/2.webp',
+    pictureUrl: '/images/products/2.webp',
   },
-  { title: 'Remera',
-    desc: 'Remera Mujer talle S',
+  { id: 4,
+    title: 'Remera',
+    description: 'Remera Mujer talle S',
+    price: 950,
     stock: 5,
-    imgSrc: '/images/products/1.webp',
+    pictureUrl: '/images/products/1.webp',
   },
-  { title: 'Sweater',
-    desc: 'Sweater Mujer talle S',
+  { id:5,
+    title: 'Sweater',
+    description: 'Sweater Mujer talle S',
+    price: 1800,
     stock: 20,
-    imgSrc: '/images/products/3.webp',
+    pictureUrl: '/images/products/3.webp',
   },
 ]
 
 function App () {
-    return (
-      <>
-        <NavBar />
-        <RBS.Container>
-          <RBS.Row className='item'>
-              {Items.map((item, index) => {
-                return(
-                  <RBS.Col key={index}>
-                    <ItemListContainer className='item' title={item.title} desc={item.desc} stock={item.stock} imgSrc={item.imgSrc}/>
-                  </RBS.Col>
-                )
-              })}
-            </RBS.Row>
-        </RBS.Container>
-      </>
-    );
-  }
-  export default App;
+  const[items, setItems] = useState([]);
+
+  useEffect(() => {
+    new Promise((resolve, reject) => {          // async mock
+      setTimeout(() => {                        // setTimeout = retraso de 2 segundos para emular retrasos de red
+        resolve(myItemsDB)                      // busca los datos de la base y los devuelve
+      },5000);
+      // then = se ejecuta si la consulta a la base de datos salio bien.
+      // en resultado estan los datos de la base y se pasan al statefull con setItems
+    }).then(resultado => setItems(resultado))
+  });
+
+  return (
+    <>
+      <NavBar />
+      <ItemListContainer Items={items}/>
+    </>
+  );
+}
+export default App;
