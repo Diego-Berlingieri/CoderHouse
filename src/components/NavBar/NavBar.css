@@ -1,0 +1,5 @@
+/* Override NavBar bootstrap styling */
+
+.d-inline-block {
+    margin-right: 10px;
+}

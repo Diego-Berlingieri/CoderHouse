@@ -37,7 +37,7 @@ ItemListContainer tipo Class - styling css externo
 CartWidget tipo funcion - styling dentro del js
 NavBar tipo Class - bootstrap + styling en css externo
 
-Estado: 
+Estado: Entregado y aprobado.
 
 ------------------------------------------------------------------------------------------------------------------
 
@@ -55,6 +55,8 @@ seleccionada por el usuario
 function ItemCount({stock, initial, onAdd}){
   desarrollar logica
 }
+
+Estado: Entregado y aprobado.
 
 ------------------------------------------------------------------------------------------------------------------
 
@@ -82,5 +84,33 @@ due: 22/mar/2021
 - Implementa un async mock (promise): Usa un efecto de montaje para poder emitir un llamado asincrónico a un mock 
 estático de datos que devuelva un conjunto de item { id, title, description, price, pictureUrl } en tiempo diferido 
 (setTimeout) de 2 segundos para emular retrasos de red.
+
+Estado: Entregado y aprobado.
+
+------------------------------------------------------------------------------------------------------------------
+
+Entregable 6 - Detalle del producto A y B
+
+- Crea tu componente ItemDetailContainer, con la misma premisa que ItemListContainer. Al iniciar utilizando un 
+efecto de montaje, debe llamar a un async mock (promise) que en 2 segundos le devuelva un 1 ítem, y lo guarde 
+en un estado propio.
+
+Ejemplo:
+const getItems = () => { /* Esta función debe retornar la promesa que resuelva con delay */ }
+function ItemDetailContainer() {
+// Implementar mock invocando a getItems() y utilizando el resolver then
+ return /* JSX que devuelva un ItemDetail (desafío 6b) */
+}
+
+- Crea tu componente ItemDetail.js que debe mostrar la vista de detalle de un ítem incluyendo su descripción,
+una foto y el precio.
+
+Ejemplo:
+function ItemDetail({ item }) {
+  return <>
+    …
+    // Desarrolla la vista de detalle expandida del producto con su imagen título, descripción y precio
+    ...
+  </>;
 
 ------------------------------------------------------------------------------------------------------------------
