@@ -1,67 +1,44 @@
-import * as RBS from 'react-bootstrap';
-import './ItemListContainer.css';
-import ItemList from './ItemList';
+import Container from 'react-bootstrap/Container'
 import {useEffect, useState} from 'react';
+import {useParams} from 'react-router-dom';
+
+import '../../styles/ItemListContainer.css';
+import ItemList from './ItemList';
 
 
-function ItemListContainer (props) {
-  console.log('ItemListContainer.js');
+function ItemListContainer () {
   const[items, setItems] = useState([]);        // statefull
+  let{category} = useParams();
+  
 
   useEffect(() => {                             // 
     new Promise((resolve, reject) => {          // async mock
       setTimeout(() => {                        // setTimeout = retraso de 2 segundos para emular retrasos de red
-        resolve(myItemsDB)                      // busca los datos de la base y los devuelve
+        resolve(                                // busca los datos de la base y los devuelve
+          require('../../assets/myDataBase.json') 
+        )        
       }, 2000);
       // then = se ejecuta si la consulta a la base de datos salio bien.
       // en resultado estan los datos de la base y se pasan al statefull con setItems
-    }).then(resultado => setItems(resultado))
-  },[]);
+    }).then((consulta) => {                    // 'then' se ejecuta si la consulta a la base de datos salio bien
+      var found = consulta.filter(
+      function (curElement) {
+        if (category) {
+          return curElement.category === category;
+        } else {
+          return consulta;
+        }
+      }
+    );
+    return found                              // recorre el array y devuelve found donde category = props.category
+  })
+  .then(resultado => setItems(resultado))     // pasar found al statefull con setItem
+},[category]);
   
   return (
-    <RBS.Container>
+    <Container>
       <ItemList Items={items} />
-    </RBS.Container>
+    </Container>
   );
 }
 export default ItemListContainer;
-
-
-// Database
-const myItemsDB = [
-  { id: 1,
-    title: 'Zapatillas',
-    description: 'Zapatillas de cuero talle 43',
-    price: 4000,
-    stock: 10,
-    pictureUrl: '/images/products/4.webp',
-  },
-  { id: 2,
-    title: 'Campera',
-    description: 'Campera Hombre talle M',
-    price: 7000,
-    stock: 5,
-    pictureUrl: '/images/products/5.webp',
-  },
-  { id: 3,
-    title: 'Jean',
-    description: 'Jean Regular talle 32',
-    price: 2500,
-    stock: 7,
-    pictureUrl: '/images/products/2.webp',
-  },
-  { id: 4,
-    title: 'Remera',
-    description: 'Remera Mujer talle S',
-    price: 950,
-    stock: 5,
-    pictureUrl: '/images/products/1.webp',
-  },
-  { id:5,
-    title: 'Sweater',
-    description: 'Sweater Mujer talle S',
-    price: 1800,
-    stock: 20,
-    pictureUrl: '/images/products/3.webp',
-  },
-]

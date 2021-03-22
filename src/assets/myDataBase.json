@@ -1,0 +1,65 @@
+[
+  { 
+    "id": 1,
+    "title": "Zapatillas",
+    "description": "Zapatillas de cuero talle 43",
+    "category": "Kids",
+    "price": 4000,
+    "stock": 10,
+    "pictureUrl": "/images/products/1.webp"
+  },
+  {
+    "id": 2,
+    "title": "Campera",
+    "description": "Campera Hombre talle M",
+    "category": "Man",
+    "price": 7000,
+    "stock": 5,
+    "pictureUrl": "/images/products/2.webp"
+  },
+  { 
+    "id": 3,
+    "title": "Pantalon",
+    "description": "Pantalon Regular talle 32",
+    "category": "Woman",
+    "price": 2500,
+    "stock": 7,
+    "pictureUrl": "/images/products/3.webp"
+  },
+  { 
+    "id": 4,
+    "title": "Remera",
+    "description": "Remera Mujer talle S",
+    "category": "Woman",
+    "price": 950,
+    "stock": 5,
+    "pictureUrl": "/images/products/4.webp"
+  },
+  { 
+    "id": 5,
+    "title": "Sweater",
+    "description": "Sweater Mujer talle S",
+    "category": "Woman",
+    "price": 1800,
+    "stock": 20,
+    "pictureUrl": "/images/products/5.webp"
+  },
+  { 
+    "id": 6,
+    "title": "Shirt",
+    "description": "Man Shirt",
+    "category": "Man",
+    "price": 3500,
+    "stock": 2,
+    "pictureUrl": "/images/products/6.webp"
+  },
+  { 
+    "id": 7,
+    "title": "T-Shirt",
+    "description": "Man T-Shirt",
+    "category": "Man",
+    "price": 1500,
+    "stock": 9,
+    "pictureUrl": "/images/products/7.webp"
+  }
+]

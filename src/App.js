@@ -1,19 +1,25 @@
 import React from 'react';
+import {BrowserRouter, Switch, Route} from 'react-router-dom';
+
 import NavBar from './components/NavBar/NavBar';
 import ItemListContainer from './components/ItemList/ItemListContainer';
 import ItemDetailContainer from './components/ItemDetail/ItemDetailContainer';
+import AboutUs from './components/AboutUs';
 
-//TO-DO agregar la navegacion.
 
 function App () {
-  console.log('App.js');
-
+  
   return (
     <>
-      {console.log('App.js - return')}
-      <NavBar />
-      <ItemListContainer />
-      <ItemDetailContainer id='2' />
+      <BrowserRouter>
+        <NavBar />
+        <Switch>
+          <Route exact path='/' component={ItemListContainer} />
+          <Route path='/AboutUs' component={AboutUs} />
+          <Route path='/itemDetail/:id?' component={ItemDetailContainer} />
+          <Route path='/itemList/:category?' component={ItemListContainer} />
+        </Switch>
+      </BrowserRouter>
     </>
   );
 }

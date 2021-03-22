@@ -1,70 +1,39 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+CAMADA: 14520
+ALUMNO: Diego Berlingieri
 
-## Available Scripts
+--------------------------------------------------------------------------------------
 
-In the project directory, you can run:
+ACERCA DEL PROYECTO
 
-### `npm start`
+Es un e-commerce de indumentaria. Se tomó de inspiracion el sitio de Zara (https://www.zara.com/ar/en/). Un aspecto minimalista y paleta de colores monocromática. Las fotos de los productos fueron extraídas del mismo sitio.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+--------------------------------------------------------------------------------------
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+DEPENDENCIAS Y LIBRERIAS
 
-### `npm test`
+- React-Bootstrap. Se eligió esta librería por ser popular y tener actualizaciones frecuentes.
+ver: https://react-bootstrap.github.io/getting-started/introduction/
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- En lugar de un icono o imagen para el carro de compras se utiliza una font (fa-shopping-cart) de FontAwesome.
+ver: https://fontawesome.com/
 
-### `npm run build`
+--------------------------------------------------------------------------------------
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+COMENTARIOS
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- Se utiliza Category y no catId para facilitar las pruebas desde la URL.
+/itemList/
+/itemList/Woman
+/itemList/Man
+/itemList/Kids
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- Para ir al detalle de un producto es necesario hacer clic sobre la imagen del mismo. Se eligió por ser un area grande y alejada del input y botón agregar.
 
-### `npm run eject`
+- Los datos se almacenan en un archivo JSON (assets/myDataBase.json).
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+- Las imagenes de los productos se encuentran en "public/images/products".
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- El style del componente CartWidget se hizo dentro del mismo archivo CartWidget.js a modo de práctica. Lo correcto sería tener un archivo css e importarlo.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- El componente NavBar se hizo como clase. El resto de los componentes son funciones.
