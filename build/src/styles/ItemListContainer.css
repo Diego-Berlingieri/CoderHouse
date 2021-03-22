@@ -1,8 +1,0 @@
-/* when using NavBar fixed Top, must have >> margin-top */
-.container {
-  margin: 0px auto;
-  margin-bottom: 30px;
-  margin-top: 80px;
-}
-
-
