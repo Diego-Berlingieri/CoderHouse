@@ -1,0 +1,11 @@
+.fa-shopping-cart {
+  margin-right: 10px;
+  font-size: 1.5rem;
+  text-decoration: none;
+  color:gray;
+}
+
+.fa-shopping-cart:hover {
+  color:whitesmoke;
+}
+  

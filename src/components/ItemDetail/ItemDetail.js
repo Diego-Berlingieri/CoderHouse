@@ -14,7 +14,7 @@ const ItemDetail = ({Item}) => {
   },[Item.stock]);
   
   const restarStock = (e, qtyBuy) => {
-    console.log(e, "function restarStock");
+    // console.log(e, "function restarStock");
     e.preventDefault();
     if (stock - qtyBuy >= 0) {
       setStock(stock - qtyBuy);

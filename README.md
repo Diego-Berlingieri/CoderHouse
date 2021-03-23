@@ -2,6 +2,8 @@
 CAMADA: 14520
 ALUMNO: Diego Berlingieri
 
+LIVE: https://ch-reactjs.netlify.app/
+
 --------------------------------------------------------------------------------------
 
 ACERCA DEL PROYECTO
@@ -33,7 +35,5 @@ COMENTARIOS
 - Los datos se almacenan en un archivo JSON (assets/myDataBase.json).
 
 - Las imagenes de los productos se encuentran en "public/images/products".
-
-- El style del componente CartWidget se hizo dentro del mismo archivo CartWidget.js a modo de práctica. Lo correcto sería tener un archivo css e importarlo.
 
 - El componente NavBar se hizo como clase. El resto de los componentes son funciones.

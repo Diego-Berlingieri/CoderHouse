@@ -3,10 +3,9 @@ import '../styles/ItemDetail.css';
 import {useState} from 'react';
 
 
-// for default value en input: defaultValue={1}
 function ItemCount ({stock, initial, onAdd}) {
   const[qty, setQty] = useState(0);
-
+  
   return(
     <Form>
       Cur.Stock: {stock}
@@ -20,8 +19,10 @@ function ItemCount ({stock, initial, onAdd}) {
         </Col>
         
         <Col>
-          <Button variant="outline-dark" type="submit"  onClick={(e) => onAdd(e, qty)}>
-            Agregar
+          <Button variant="dark" type="submit"
+           onClick={(e) => onAdd(e, qty)}
+           disabled={stock>0? false : true}>
+             Add to cart
           </Button>
         </Col>
       </Form.Row>

@@ -1,12 +1,13 @@
 import Card from 'react-bootstrap/Card'
-import {useState} from 'react';
-import ItemCount from '../ItemCount';
+//import {useState} from 'react';
+//import ItemCount from '../ItemCount';
 import {Link} from 'react-router-dom';
 
 
 const Item = ({item}) => {
-  const[stock, setStock] = useState(item.stock);  
-
+  // const[stock, setStock] = useState(item.stock);  
+  
+  /*
   const restarStock = (e, qtyBuy) => {
     e.preventDefault();
     if (stock - qtyBuy >= 0) {
@@ -16,6 +17,9 @@ const Item = ({item}) => {
     }
   };
 
+  Se saco el ItemCount de la lista de Items. Se dejo solo en ItemDetail.
+  <ItemCount stock={stock} initial={1} onAdd={restarStock}></ItemCount>
+  */
   
   return(
     <Card style={{ width: '18rem', marginTop:'20px' }}>
@@ -28,7 +32,6 @@ const Item = ({item}) => {
           <p>{item.description}</p>
           <p>Price: ${item.price}</p>
         </Card.Text>
-        <ItemCount stock={stock} initial={1} onAdd={restarStock}></ItemCount>
     </Card.Body>
   </Card>
   );
