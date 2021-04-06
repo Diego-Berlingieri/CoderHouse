@@ -16,7 +16,7 @@ function Cart () {
   return(
     <Container>
 
-      {getCartTotals().qty == 0 
+      {getCartTotals().qty === 0 
       ? <>
         <h3>Your cart is empty</h3>
         </>

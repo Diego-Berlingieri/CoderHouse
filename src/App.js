@@ -1,9 +1,7 @@
-import {useContext} from 'react';
 import React from 'react';
 import {BrowserRouter, Switch, Route} from 'react-router-dom';
 
-
-import {CartContext, CartProvider} from './components/Context/CartContext';
+import {CartProvider} from './components/Context/CartContext';
 
 import NavBar from './components/NavBar/NavBar';
 import ItemListContainer from './components/ItemList/ItemListContainer';

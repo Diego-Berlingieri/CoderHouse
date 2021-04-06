@@ -5,7 +5,7 @@ import '../../styles/cartWidget.css';
 
 // Se puede agregar estado del cart. "empty cart", contador de items y/o un subtotal $
 function CartWidget() {
-  const { cart, getCartTotals } = useContext(CartContext);
+  const { getCartTotals } = useContext(CartContext);
  
   return (
     <>

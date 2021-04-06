@@ -202,3 +202,6 @@ están agregados (2 camisas y 1 gorro equivaldrían a 3 items).
 - El cart widget no se debe mostrar más si no hay items en el carrito, aplicando la técnica que elijas
 (dismount, style, etc).
 
+------------------------------------------------------------------------------------------------------------------
+
+npm install --save firebase
