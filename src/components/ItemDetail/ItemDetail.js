@@ -1,11 +1,13 @@
+import {useEffect, useState, useContext} from 'react';
+import {CartContext} from '../Context/CartContext';
+import ItemCount from '../ItemCount';
 import Card from 'react-bootstrap/Card';
 import '../../styles/ItemDetail.css';
-import ItemCount from '../ItemCount';
-import {useEffect, useState} from 'react';
 
 
 const ItemDetail = ({Item}) => {
-  const[stock, setStock] = useState(0);
+  const [stock, setStock] = useState(0);
+  const {addItem} = useContext(CartContext);
 
   var mySrc = 'url(' + process.env.PUBLIC_URL + Item.pictureUrl + ')';
 
@@ -14,10 +16,11 @@ const ItemDetail = ({Item}) => {
   },[Item.stock]);
   
   const restarStock = (e, qtyBuy) => {
-    // console.log(e, "function restarStock");
     e.preventDefault();
+
     if (stock - qtyBuy >= 0) {
-      setStock(stock - qtyBuy);
+      addItem(Item, qtyBuy);        // funcion del provider
+      setStock(stock - qtyBuy);     // descontar del stock
     } else {
       alert('Sorry...\nNot enough stock');
     }
@@ -25,9 +28,8 @@ const ItemDetail = ({Item}) => {
 
   return(
     <>
-      {console.log('ItemDetail.js - Return ', Item)}
       <Card className='itemDetail'>
-        <Card.Header Header as="h5">{Item.title}</Card.Header>
+        <Card.Header as="h5">{Item.title}</Card.Header>
         <div className='itemDetailPicContainer' style={{ backgroundImage: mySrc }} />        
         <Card.Body>
           <Card.Text>Product No: {Item.id}</Card.Text>

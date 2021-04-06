@@ -15,7 +15,7 @@ function ItemDetailContainer () {
           resolve(
             require('../../assets/myDataBase.json')    // busca los datos de la base y los devuelve
           )
-        }, 2000);
+        }, 2);
       })
       .then((consulta) => {                    // 'then' se ejecuta si la consulta a la base de datos salio bien
         var found = consulta.find(

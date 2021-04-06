@@ -151,3 +151,54 @@ A tener en cuenta: en la Rúbrica de Evaluación (ubicada en la carpeta de la ca
 Importante: La entrega intermedia no supone la realización de un archivo aparte o extra; marca que en este momento se hará una revisión más integral
 
 ------------------------------------------------------------------------------------------------------------------
+
+Entregable 7 - Sincronizar counter
+
+Importa el ItemCount.js del desafio 4 en el counter ItemDetail.js y configura el evento de compra, siguiendo los detalles
+de manual.
+
+Aspectos a incluir en el entregable:
+- Debes lograr separar la responsabilidad del count, del detalle del item y utilizar los eventos emitidos por el ItemCount (onAdd, onSubstract)
+- Cuando ItemCount emita un evento (onAdd, onSubstract) se debe almacenar ese valor en un estado interno del ItemDetail para hacer desaparecer
+del itemCount una vez se termine el stock.
+- Cuando el estado interno del ItemDetail tenga la cantidad de items solicitados mostrar en su lugar un boton que diga
+"Terminar mi compra".
+- El boton de terminar mi compra debe poder navegar a un componente vacio por el momento en la ruta '/cart'.
+
+------------------------------------------------------------------------------------------------------------------
+
+Entregable 8 - CartContext
+
+Implementa react context para mantener el estado de compra del user, siguiendo los detalles del manual.
+
+CartContext.js con el context y su custom provider (importalo en App.js)
+Al clickear comprar en ItemDetail se debe guardar en el CartContext el producto y su cantidad en forma de objeto 
+{ item {}, quantity}.
+Detalle importante: CartContext debe tener la logica incorporada de no aceptar duplicados y mantener su consistencia.
+
+Metodos recomendados:
+- addItem(item,quantity)  // Agregar cierta cantidad de un item al carrito.
+- removeItem(itemId)      // Remover un item del cart usando su id.
+- clear()                 // Remover todos los items.
+- isInCart (id)           // True / False.
+
+------------------------------------------------------------------------------------------------------------------
+
+Entregable 9 - Cart View
+
+Expande tu componente Cart.js con el desglose de la compra, y actualiza tu CartWidget.js para hacerlo reactivo al contexto.
+
+Cart.js 
+- Debe mostrar el desglose de tu carrito y el precio total.
+- Debe estar agregada la ruta ‘cart’ al BrowserRouter.
+- Debe mostrar todos los ítems agregados agrupados.
+- Por cada tipo de ítem, incluye un control para eliminar ítems.
+- De no haber ítems muestra un mensaje, de manera condicional, diciendo que no hay ítems y un react-router Link 
+o un botón para que pueda volver al Landing (ItemDetailContainer.js) para buscar y comprar algo.
+
+CartWidget.js.
+- Ahora debe consumir el CartContext y mostrar en tiempo real (aparte del ícono) qué cantidad de ítems 
+están agregados (2 camisas y 1 gorro equivaldrían a 3 items).
+- El cart widget no se debe mostrar más si no hay items en el carrito, aplicando la técnica que elijas
+(dismount, style, etc).
+

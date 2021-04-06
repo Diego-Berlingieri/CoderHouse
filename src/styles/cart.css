@@ -1,6 +1,25 @@
 .container {
-    max-width: 1024px;
-    margin: 0px auto;
-    margin-top: 50px;
-    margin-bottom: 30px;
+  max-width: 1024px;
+  margin: 0px auto;
+  margin-top: 70px;
+  margin-bottom: 30px;
+}
+
+.cartPicContainer {
+  margin: 0px auto;
+  height: 150px;
+  width: 100px;
+}
+
+.fa-trash-alt {
+  margin-right: 10px;
+  font-size: 1.5rem;
+  text-decoration: none;
+}
+.fa-trash-alt:hover {
+  color:red;
+}
+
+.cartFooter {
+  margin-top:5px;
 }

@@ -9,15 +9,14 @@ import ItemList from './ItemList';
 function ItemListContainer () {
   const[items, setItems] = useState([]);        // statefull
   let{category} = useParams();
-  
 
-  useEffect(() => {                             // 
+  useEffect(() => {                             //    
     new Promise((resolve, reject) => {          // async mock
       setTimeout(() => {                        // setTimeout = retraso de 2 segundos para emular retrasos de red
         resolve(                                // busca los datos de la base y los devuelve
           require('../../assets/myDataBase.json') 
         )        
-      }, 2000);
+      }, 2);
       // then = se ejecuta si la consulta a la base de datos salio bien.
       // en resultado estan los datos de la base y se pasan al statefull con setItems
     }).then((consulta) => {                    // 'then' se ejecuta si la consulta a la base de datos salio bien

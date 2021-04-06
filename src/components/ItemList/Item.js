@@ -5,22 +5,7 @@ import {Link} from 'react-router-dom';
 
 
 const Item = ({item}) => {
-  // const[stock, setStock] = useState(item.stock);  
-  
-  /*
-  const restarStock = (e, qtyBuy) => {
-    e.preventDefault();
-    if (stock - qtyBuy >= 0) {
-      setStock(stock - qtyBuy);
-    } else {
-      alert('Sorry...\nNot enough stock');
-    }
-  };
 
-  Se saco el ItemCount de la lista de Items. Se dejo solo en ItemDetail.
-  <ItemCount stock={stock} initial={1} onAdd={restarStock}></ItemCount>
-  */
-  
   return(
     <Card style={{ width: '18rem', marginTop:'20px' }}>
       <Link to={"/itemDetail/" + item.id}>
@@ -28,10 +13,8 @@ const Item = ({item}) => {
       </Link>  
       <Card.Body>
         <Card.Title>{item.title}</Card.Title>
-        <Card.Text>
-          <p>{item.description}</p>
-          <p>Price: ${item.price}</p>
-        </Card.Text>
+        <Card.Text>{item.description}</Card.Text>
+        <Card.Text>Price: ${item.price}</Card.Text>
     </Card.Body>
   </Card>
   );
