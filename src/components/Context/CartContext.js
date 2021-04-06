@@ -9,9 +9,8 @@ export default function CartProvider(props) {
 
 
   function clearCart() {                    // Remover todos los items.
-    console.log('CartContext - clearing cart');
-    let newCart = [];
-    setCart(newCart);
+    //console.log('CartContext - clearing cart');
+    setCart([]);
   };
 
 
@@ -22,8 +21,7 @@ export default function CartProvider(props) {
 
     let newCart = [];
     for (let i = 0; i < cart.length; i++) {
-      if (cart[i].Item.id !== id) {          // usando el itemId.
-      //if (i !== index) {                      // usando su posicion en el carro.
+      if (cart[i].Item.id !== id) {
         newCart.push(cart[i])
       }
     }
@@ -32,11 +30,10 @@ export default function CartProvider(props) {
 
 
   function addItem(Item, qtyBuy) {        // Agregar cierta cantidad de un item al carrito.
-    // Si el item esta en el carrito, sumo la cantidad.
     for (let i = 0; i < cart.length; i++) {
       if (cart[i].Item.id === Item.id) {
-        cart[i].qtyBuy = cart[i].qtyBuy + qtyBuy;     // no actualiza el cart
-        return;
+        qtyBuy = qtyBuy + cart[i].qtyBuy;
+        cart.splice(i,1);
       }
     }
     setCart([ ...cart, {Item, qtyBuy} ]);

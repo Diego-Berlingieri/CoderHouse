@@ -32,7 +32,6 @@ const ItemDetail = ({Item}) => {
         <Card.Header as="h5">{Item.title}</Card.Header>
         <div className='itemDetailPicContainer' style={{ backgroundImage: mySrc }} />        
         <Card.Body>
-          <Card.Text>Product No: {Item.id}</Card.Text>
           <Card.Text>Description: {Item.description}</Card.Text>
           <Card.Text>Price: ${Item.price}</Card.Text>
         </Card.Body>
