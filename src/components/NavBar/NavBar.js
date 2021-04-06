@@ -19,9 +19,9 @@ class NavBar extends Component {
           <RBS.Navbar.Collapse id="basic-navbar-nav">
             <RBS.Nav className="mr-auto">
               <RBS.NavDropdown title="Products" id="basic-nav-dropdown">
-                <RBS.NavDropdown.Item as={Link} to="/itemList/Woman">Woman</RBS.NavDropdown.Item>
-                <RBS.NavDropdown.Item as={Link} to="/itemList/Man">Man</RBS.NavDropdown.Item>
-                <RBS.NavDropdown.Item as={Link} to="/itemList/Kids">Kids</RBS.NavDropdown.Item>
+                <RBS.NavDropdown.Item as={Link} to="/itemList/YkySayoe2bOPZOJOESaX">Woman</RBS.NavDropdown.Item>
+                <RBS.NavDropdown.Item as={Link} to="/itemList/GLwUh5g2YwhJWCvQH9S3">Man</RBS.NavDropdown.Item>
+                <RBS.NavDropdown.Item as={Link} to="/itemList/iLLAVMN3YiEgF3EGNex8">Kids</RBS.NavDropdown.Item>
                 <RBS.NavDropdown.Divider />
                 <RBS.NavDropdown.Item as={Link} to="/itemList">All</RBS.NavDropdown.Item>
               </RBS.NavDropdown>

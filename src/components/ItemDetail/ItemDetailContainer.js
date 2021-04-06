@@ -1,5 +1,6 @@
 import {useEffect, useState} from 'react';
 import {useParams} from 'react-router-dom';
+import {getFirestore} from '../Firebase';
 
 import ItemDetail from './ItemDetail';
 
@@ -9,25 +10,27 @@ function ItemDetailContainer () {
     let{id} = useParams();
     //console.log('ItemDetailContainer.js - param: ', id);
   
-    useEffect(() => {                           // useEffect se ejecuta luego del primer render (simil componentDidMount)
-      new Promise((resolve, reject) => {        // async mock
-        setTimeout(() => {                      // setTimeout = retraso de 2 segundos para emular retrasos de red
-          resolve(
-            require('../../assets/myDataBase.json')    // busca los datos de la base y los devuelve
-          )
-        }, 2);
-      })
-      .then((consulta) => {                    // 'then' se ejecuta si la consulta a la base de datos salio bien
-        var found = consulta.find(
-          function (curElement) {
-            return curElement.id === parseInt(id);
-          }
-        );
-        return found                            // recorre el array y devuelve found donde id = props.id
-      })
-      .then(resultado => setItem(resultado))    // pasar found al statefull con setItem
+    useEffect(() => {
+      // setLoading(true);
+      const db = getFirestore();
+      const itemCollection = db.collection('items');
+      const item = itemCollection.doc(id);
+
+      item.get().then((doc) => {
+        if (!doc.exists) {
+          console.log('Item does not exist - id: ', id);
+          return;
+        }
+        console.log('Item found');
+        setItem({id: doc.id, ...doc.data()});
+
+      }).catch((error) => {
+        console.log('Error searching items', error);
+      }).finally(() => {
+        //setLoading(false);
+      });
     },[id]);
-  
+
     return (
       <>{console.log(item)}
         <ItemDetail Item={item}/>

@@ -204,12 +204,18 @@ están agregados (2 camisas y 1 gorro equivaldrían a 3 items).
 
 ------------------------------------------------------------------------------------------------------------------
 
-Entregable 10 - Firebase
+Entregable 10 - Item Collection
 
-npm install --save firebase
+Conecta tu nueva ItemCollection de Google Firestore a tu ItemListContainer y ItemDetailContainer.
+
+- Conecta tu colección de firestore con el listado de ítems y con el detalle de ítem.
+- Elimina los async mocks (promises) y reemplazalos por los llamados de Firestore.
+- Si navegas a /item/:id, debe ocurrir una consulta de (1) documento. 
+- Si navegas al catálogo, debes consultar (N) documentos con un query filtrado, implementando la 
+lógica de categorías y obteniendo el id de categoría del parámetro de react-router :categoryId.
 
 
-
+Nota: npm install --save firebase
 
 ------------------------------------------------------------------------------------------------------------------
 
@@ -219,7 +225,3 @@ Cuando se modifica el array cart (ya sea por eliminar un item o modificar una ca
 
 En el caso de borrar un item, lo pude solucionar haciendo una copia completa del array sin el item a eliminar y llamando
 al setCart con el nuevo array.
-
------------------
-
-poner el footer del carrito dentro del condicional. En el caso de carro vacio, no debe ser visible. 
