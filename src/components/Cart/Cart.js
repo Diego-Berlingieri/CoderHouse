@@ -19,6 +19,9 @@ function Cart () {
       {getCartTotals().qty === 0 
       ? <>
         <h3>Your cart is empty</h3>
+        <Link to={"/"}>
+          <Button variant="primary">Back to Store</Button>
+        </Link>
         </>
         
       : cart.map((item, index) => {
@@ -69,9 +72,7 @@ function Cart () {
       </Row>
       </Card.Footer>
   
-        <Link to={"/"}>
-          <Button variant="primary">Back to Store</Button>
-        </Link>
+
           
       </Container>
   );

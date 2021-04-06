@@ -3,13 +3,14 @@ import '../../styles/NavBar.css';
 import logo from '../../assets/mello-logo.svg';
 import CartWidget from './CartWidget';
 import React, { Component } from 'react';
+import {Link} from 'react-router-dom';
 
 
 class NavBar extends Component {
   render() {
     return (
         <RBS.Navbar bg="dark" expand="sm" variant="dark" fixed="top">
-          <RBS.Navbar.Brand href="/">
+          <RBS.Navbar.Brand as={Link} to="/">
             <img src={logo} width="30" height="30" className="d-inline-block align-top" alt="React Bootstrap logo"/>
             MELLO
           </RBS.Navbar.Brand>
@@ -18,13 +19,13 @@ class NavBar extends Component {
           <RBS.Navbar.Collapse id="basic-navbar-nav">
             <RBS.Nav className="mr-auto">
               <RBS.NavDropdown title="Products" id="basic-nav-dropdown">
-                <RBS.NavDropdown.Item href="/itemList/Woman">Woman</RBS.NavDropdown.Item>
-                <RBS.NavDropdown.Item href="/itemList/Man">Man</RBS.NavDropdown.Item>
-                <RBS.NavDropdown.Item href="/itemList/Kids">Kids</RBS.NavDropdown.Item>
+                <RBS.NavDropdown.Item as={Link} to="/itemList/Woman">Woman</RBS.NavDropdown.Item>
+                <RBS.NavDropdown.Item as={Link} to="/itemList/Man">Man</RBS.NavDropdown.Item>
+                <RBS.NavDropdown.Item as={Link} to="/itemList/Kids">Kids</RBS.NavDropdown.Item>
                 <RBS.NavDropdown.Divider />
-                <RBS.NavDropdown.Item href="/itemList">All</RBS.NavDropdown.Item>
+                <RBS.NavDropdown.Item as={Link} to="/itemList">All</RBS.NavDropdown.Item>
               </RBS.NavDropdown>
-              <RBS.Nav.Link href="/AboutUs">About Us</RBS.Nav.Link>
+              <RBS.Nav.Link as={Link} to="/AboutUs">About Us</RBS.Nav.Link>
             </RBS.Nav>
             <CartWidget />
           </RBS.Navbar.Collapse>

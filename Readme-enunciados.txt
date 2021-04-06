@@ -204,4 +204,22 @@ están agregados (2 camisas y 1 gorro equivaldrían a 3 items).
 
 ------------------------------------------------------------------------------------------------------------------
 
+Entregable 10 - Firebase
+
 npm install --save firebase
+
+
+
+
+------------------------------------------------------------------------------------------------------------------
+
+DUDAS y TO-DO's
+
+Cuando se modifica el array cart (ya sea por eliminar un item o modificar una cantidad) no actualiza el widget o los listados.
+
+En el caso de borrar un item, lo pude solucionar haciendo una copia completa del array sin el item a eliminar y llamando
+al setCart con el nuevo array.
+
+-----------------
+
+poner el footer del carrito dentro del condicional. En el caso de carro vacio, no debe ser visible. 

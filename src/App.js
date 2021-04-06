@@ -1,13 +1,15 @@
 import React from 'react';
 import {BrowserRouter, Switch, Route} from 'react-router-dom';
 
-import {CartProvider} from './components/Context/CartContext';
+
 
 import NavBar from './components/NavBar/NavBar';
 import ItemListContainer from './components/ItemList/ItemListContainer';
 import ItemDetailContainer from './components/ItemDetail/ItemDetailContainer';
 import AboutUs from './components/AboutUs';
 import Cart from './components/Cart/Cart';
+
+import {CartProvider} from './components/Context/CartContext';
 
 
 function App () {
