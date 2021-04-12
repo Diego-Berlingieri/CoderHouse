@@ -13,12 +13,14 @@ function Checkout() {
   const [orderId, setOrderId] = useState();
   const [db] = useState(getFirestore());
 
+  /*
   function ready() {
     //validate document.getElementById("nameId").value
     //validate document.getElementById("phoneId").value,
     //validate document.getElementById("emailId").value,
     //cartIsNotEmpty
   }
+  */
 
   function create() {
     // hacer la conversion de cart al objeto solicitado en el enunciado.
