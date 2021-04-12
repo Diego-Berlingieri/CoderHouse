@@ -217,11 +217,27 @@ lógica de categorías y obteniendo el id de categoría del parámetro de react-
 
 Nota: npm install --save firebase
 
+firebaseConfig = {
+    apiKey: "AIzaSyDLJBCwL-TKgATNGc6T2s2cveKqSJD9kAE",
+    authDomain: "diegoberlingieri-77aa6.firebaseapp.com",
+    projectId: "diegoberlingieri-77aa6",
+    storageBucket: "diegoberlingieri-77aa6.appspot.com",
+    messagingSenderId: "169923766283",
+    appId: "1:169923766283:web:7377f17cf98b7fe298ff0e"
+
 ------------------------------------------------------------------------------------------------------------------
 
-DUDAS y TO-DO's
+Entregable 11 - Item Collection II
 
-Cuando se modifica el array cart (ya sea por eliminar un item o modificar una cantidad) no actualiza el widget o los listados.
+Crea tu colección de órdenes.
 
-En el caso de borrar un item, lo pude solucionar haciendo una copia completa del array sin el item a eliminar y llamando
-al setCart con el nuevo array.
+- Utiliza las operaciones de inserción para insertar tu orden en la colección y 
+dale al user su id de orden auto-generada
+- Crea los mappings para poder grabar un objeto del formato 
+  { buyer: { name, phone, email }, 
+    items: [ {id, title, price},
+             {id, title, price},
+           ],
+    date, total 
+  }
+Pista: Puedes controlar los stocks con multi-gets utilizando los itemId de tu cart.

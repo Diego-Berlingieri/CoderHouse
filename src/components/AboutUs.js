@@ -1,4 +1,4 @@
-import Container from 'react-bootstrap/Container'
+import { Image, Container } from 'react-bootstrap'
 import '../styles/aboutUs.css';
 
 function AboutUs () {

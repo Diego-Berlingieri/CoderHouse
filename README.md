@@ -35,5 +35,6 @@ COMENTARIOS
 - Los datos se almacenan en un archivo JSON (assets/myDataBase.json).
 
 - Las imagenes de los productos se encuentran en "public/images/products".
+  Update: Se migraron la imagenes de los productos a Cloudinary.
 
 - El componente NavBar se hizo como clase. El resto de los componentes son funciones.

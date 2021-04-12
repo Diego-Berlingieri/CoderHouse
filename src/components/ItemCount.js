@@ -50,7 +50,7 @@ function ItemCount ({stock, initial, onAdd}) {
         </Col>
 
         <Col xs={3}>
-          <Form.Control type="input" value={qty} />
+          <Form.Control type="input" value={qty} readOnly />
         </Col>
 
         <Col xs={2}>

@@ -6,6 +6,13 @@
     margin-top: 80px;
 }
 
+.cardImage {
+    margin: 0px auto;
+    object-Fit: 'cover';
+    border-Radius: 55;
+    width: 400px;
+}
+
 .itemDetailPicContainer {
     margin: 0px auto;
     height: 500px;

@@ -9,7 +9,8 @@ const ItemDetail = ({Item}) => {
   const [stock, setStock] = useState(0);
   const {addItem} = useContext(CartContext);
 
-  var mySrc = 'url(' + process.env.PUBLIC_URL + Item.pictureUrl + ')';
+  //var mySrc = 'url(' + process.env.PUBLIC_URL + Item.pictureUrl + ')';
+  //<div className='itemDetailPicContainer' style={{ backgroundImage: mySrc }} />
 
   useEffect(() => {
       setStock(Item.stock);
@@ -19,7 +20,7 @@ const ItemDetail = ({Item}) => {
     e.preventDefault();
 
     if (stock - qtyBuy >= 0) {
-      addItem(Item, qtyBuy);        // funcion del provider
+      addItem(Item, qtyBuy);        // funcion del cartProvider
       setStock(stock - qtyBuy);     // descontar del stock
     } else {
       alert('Sorry...\nNot enough stock');
@@ -30,7 +31,7 @@ const ItemDetail = ({Item}) => {
     <>
       <Card className='itemDetail'>
         <Card.Header as="h5">{Item.title}</Card.Header>
-        <div className='itemDetailPicContainer' style={{ backgroundImage: mySrc }} />        
+        <Card.Img variant="top" className='cardImage' src={Item.cloudinary} />
         <Card.Body>
           <Card.Text>Description: {Item.description}</Card.Text>
           <Card.Text>Price: ${Item.price}</Card.Text>

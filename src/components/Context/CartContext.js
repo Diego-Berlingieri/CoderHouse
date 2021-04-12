@@ -9,16 +9,11 @@ export default function CartProvider(props) {
 
 
   function clearCart() {                    // Remover todos los items.
-    //console.log('CartContext - clearing cart');
     setCart([]);
   };
 
-
   function removeItem(id) {                // Remover un item del cart
-    console.log('CartContext - removeItem');
-    // Si uso el mismo array, no actualiza el componente. Por eso lo copio en un array nuevo.
-    // cart.splice(i,1);
-
+    // cart.splice(i,1); no actualiza el componente.
     let newCart = [];
     for (let i = 0; i < cart.length; i++) {
       if (cart[i].Item.id !== id) {
@@ -27,7 +22,6 @@ export default function CartProvider(props) {
     }
     setCart(newCart);
   };
-
 
   function addItem(Item, qtyBuy) {        // Agregar cierta cantidad de un item al carrito.
     for (let i = 0; i < cart.length; i++) {
@@ -58,7 +52,7 @@ export default function CartProvider(props) {
     return {total: total, qty: totalQty};
   }
 
-
+  
   return (
     <CartContext.Provider value={{ cart, setCart, clearCart, removeItem, addItem, getCartTotals }}>
       {props.children}

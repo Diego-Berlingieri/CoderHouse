@@ -1,3 +1,4 @@
+import {Link} from 'react-router-dom';
 import {useContext} from 'react';
 import {CartContext} from '../Context/CartContext';
 
@@ -14,7 +15,7 @@ function CartList () {
           <Card.Header Header as="h5">
             <Row>
               <Col>{item.Item.title}</Col>
-              <Col xs="auto"><i class="fas fa-trash-alt" onClick={(e) => removeItem(item.Item.id)}></i></Col>
+              <Col xs="auto"><i className="fas fa-trash-alt" onClick={(e) => removeItem(item.Item.id)}></i></Col>
             </Row>
           </Card.Header>
 
@@ -22,7 +23,7 @@ function CartList () {
           <Row>
             <Col xs="auto">
               <div className='cartPicContainer'>
-                <Card.Img src={process.env.PUBLIC_URL + item.Item.pictureUrl} />
+                <Card.Img src={item.Item.cloudinary} />
               </div>
             </Col>
             <Col>
@@ -42,8 +43,10 @@ function CartList () {
           <h4>Total: $ {getCartTotals().total}</h4>
         </Col>
         <Col xs="auto">
-          <Button variant="success" disabled={cart.length > 0 ? false : true }>
-          Go to Payment</Button>
+          <Link to={"/checkout"}>
+            <Button variant="success" disabled={cart.length > 0 ? false : true }>
+              Checkout</Button>
+          </Link>
         </Col>
         <Col xs="auto">
           <Button variant="danger" disabled={cart.length > 0 ? false : true }
