@@ -241,3 +241,19 @@ dale al user su id de orden auto-generada
     date, total 
   }
 Pista: Puedes controlar los stocks con multi-gets utilizando los itemId de tu cart.
+
+------------------------------------------------------------------------------------------------------------------
+
+Sacar todos los textos hardcodeados y pasarlo a un JSON.
+
+ver Prettier para acomodar el codigo
+
+Hacer un archivo "routes" con las rutas
+
+hacer un helper para las consultas a la base de datos y no consultar desde los componentes
+
+Restar el stock al hacer una compra.
+
+Hacer una funcion de login.
+
+Hacer la app multilenguaje.

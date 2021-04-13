@@ -7,14 +7,13 @@ const app = firebase.initializeApp({
     projectId: "diegoberlingieri-77aa6",
     storageBucket: "diegoberlingieri-77aa6.appspot.com",
     messagingSenderId: "169923766283",
-    appId: "1:169923766283:web:7377f17cf98b7fe298ff0e"
-   
+    appId: "1:169923766283:web:7377f17cf98b7fe298ff0e" 
 })
 
 export function getFirebase() {
     return app
-} 
+}
 
 export function getFirestore(){
     return firebase.firestore(app)
-} 
+}

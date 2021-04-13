@@ -13,17 +13,47 @@ function Checkout() {
   const [orderId, setOrderId] = useState();
   const [db] = useState(getFirestore());
 
-  /*
+  
   function ready() {
-    //validate document.getElementById("nameId").value
-    //validate document.getElementById("phoneId").value,
-    //validate document.getElementById("emailId").value,
-    //cartIsNotEmpty
+    let formError = "Please check the following errors:";
+    let isReady = true;
+
+    if (document.getElementById("nameId").value == "") {
+      formError = formError + '\n- enter your Name';
+      isReady = false;
+    }
+    if (document.getElementById("phoneId").value == "") {
+      formError = formError + '\n- enter your phone';
+      isReady = false;
+    }
+    if (document.getElementById("emailId").value == "") {
+      formError = formError + '\n- enter your email';
+      isReady = false;
+    }
+    const mailformat = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+    if(!document.getElementById("emailId").value.match(mailformat)) {
+      formError = formError + '\n- email not valid';
+      isReady = false;
+    }
+    if (getCartTotals().qty == 0){
+      formError = formError + '\n- your cart is empty';
+      isReady = false;
+    }
+
+    if (isReady) {
+      return true;        // Save cart
+    } else {
+      alert(formError);   // Show error
+      return false;     
+    }
   }
-  */
+  
 
   function create() {
-    // hacer la conversion de cart al objeto solicitado en el enunciado.
+    if (!ready()) {
+      return;             // if not ready, exit function
+    };
+
     const newOrder = {
       buyer: { name: document.getElementById("nameId").value,
                phone: document.getElementById("phoneId").value, 
@@ -41,7 +71,7 @@ function Checkout() {
         price: cart[i].Item.price,
         quantity: cart[i].qtyBuy,
       })    
-    }//console.log('newOrder', newOrder);
+    } //console.log('newOrder', newOrder);
     
     const orders = db.collection("orders");
     
@@ -49,9 +79,10 @@ function Checkout() {
       //console.log(resp.id);
       setOrderId(resp.id);
       clearCart();
+      document.getElementById("nameId").value = "";
+      document.getElementById("phoneId").value = "";
+      document.getElementById("emailId").value = "";
     });
-
-    
   }
 
   return (
