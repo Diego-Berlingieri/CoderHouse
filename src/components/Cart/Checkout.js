@@ -18,15 +18,15 @@ function Checkout() {
     let formError = "Please check the following errors:";
     let isReady = true;
 
-    if (document.getElementById("nameId").value == "") {
+    if (document.getElementById("nameId").value === "") {
       formError = formError + '\n- enter your Name';
       isReady = false;
     }
-    if (document.getElementById("phoneId").value == "") {
+    if (document.getElementById("phoneId").value === "") {
       formError = formError + '\n- enter your phone';
       isReady = false;
     }
-    if (document.getElementById("emailId").value == "") {
+    if (document.getElementById("emailId").value === "") {
       formError = formError + '\n- enter your email';
       isReady = false;
     }
@@ -35,7 +35,7 @@ function Checkout() {
       formError = formError + '\n- email not valid';
       isReady = false;
     }
-    if (getCartTotals().qty == 0){
+    if (getCartTotals().qty === 0){
       formError = formError + '\n- your cart is empty';
       isReady = false;
     }

@@ -257,3 +257,6 @@ Restar el stock al hacer una compra.
 Hacer una funcion de login.
 
 Hacer la app multilenguaje.
+
+README.MD
+aca hay una plantilla https://gist.github.com/Villanuevand/6386899f70346d4580c723232524d35a
