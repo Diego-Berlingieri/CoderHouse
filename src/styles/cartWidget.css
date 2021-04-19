@@ -10,8 +10,11 @@
   text-decoration: none;
 }
 .cartQty:hover {
-  color:whitesmoke;
+  color:lightgrey;
   text-decoration: none;
+}
+.cartQty:focus {
+  color:whitesmoke;
 }
 
 .disabledCart {

@@ -1,31 +1,25 @@
 import React from 'react';
-import {BrowserRouter, Switch, Route} from 'react-router-dom';
+import { BrowserRouter, Switch } from 'react-router-dom';
 
+import Routes from './components/Routes';
 import NavBar from './components/NavBar/NavBar';
-import ItemListContainer from './components/ItemList/ItemListContainer';
-import ItemDetailContainer from './components/ItemDetail/ItemDetailContainer';
-import AboutUs from './components/AboutUs';
-import Cart from './components/Cart/Cart';
-import Checkout from './components/Cart/Checkout';
 
 import {CartProvider} from './components/Context/CartContext';
+import {LangProvider} from './components/Context/LangContext';
 
 
 function App () {
   return (
     <>
     <CartProvider>
+      <LangProvider langId={navigator.language.substring(0, 2)}>
       <BrowserRouter>
         <NavBar />
         <Switch>
-          <Route exact path='/' component={ItemListContainer} />
-          <Route path='/AboutUs' component={AboutUs} />
-          <Route path='/Cart' component={Cart} />
-          <Route path='/itemDetail/:id?' component={ItemDetailContainer} />
-          <Route path='/itemList/:category?' component={ItemListContainer} />
-          <Route path='/checkout' component={Checkout} />
+          {Routes}
         </Switch>
       </BrowserRouter>
+    </LangProvider>
     </CartProvider>
     </>
   );

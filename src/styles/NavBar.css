@@ -3,3 +3,27 @@
 .d-inline-block {
     margin-right: 10px;
 }
+
+.lang-tag {
+    font-family: 'Segoe UI', 'Roboto', monospace;
+    font-weight: normal;
+    font-size: 1.1rem;
+    display: inline-flex;
+    padding-left: 5px;
+}
+
+.nav-link {
+    color:grey;
+}
+.nav-link:hover {
+    color:lightgrey;
+}
+.nav-link:focus {
+    color:whitesmoke;
+}
+
+
+
+
+
+
